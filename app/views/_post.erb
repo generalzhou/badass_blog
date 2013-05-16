@@ -1,7 +1,11 @@
 <div class="post">
-  <h2><a href='/post=<%= post_id %>'><%= title %></a>
-
-  <!-- <small class="page_no">Page 1</small></h2> -->
+  <h2 class="post_title"><a href='/post=<%= post_id %>'><%= title %></a>
   
-  <p><%= text %></p>
+  <p class="body"><%= text %></p>
+  <ul class="tags">
+    <% tags.each do |tag| %>
+      <li><%= tag.tag_name %></li>
+    <% end %>
+  </ul>
+
 </div>

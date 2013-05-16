@@ -1,0 +1,7 @@
+<div class="post_form">
+  <form action='/posts/<%= post.id %>' method='post'>
+    <%= erb :_post_form, :locals => {:post => post} %>
+    <br>
+    <input class="post_form submit" type='submit' value='Edit'>
+  </form>
+</div>

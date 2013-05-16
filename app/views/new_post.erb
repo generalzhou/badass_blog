@@ -1,0 +1,9 @@
+<form action='/posts' method='post'>
+  <div class="post_form">
+
+    <input type="hidden" name="_method" value="put" />
+    <%= erb :_post_form, :locals => {:post => post} %>
+    <br>
+    <input class="submit post_form" type='submit' value='Create'>
+  </div>
+</form>

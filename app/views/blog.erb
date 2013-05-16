@@ -1,5 +1,6 @@
 
 
-<%= erb :_post, :locals => {:post_id => 1, :title => 'Title!', :text => 'Text text', :tags => 'tags'} %>
+<% Post.all.each do |post| %>
+  <%= render_post(post) %>
+<% end %>
 
-<%= erb :_pagination %>

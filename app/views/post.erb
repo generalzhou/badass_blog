@@ -1,0 +1,4 @@
+
+<%= erb :_post, :locals => {:post => post} %>
+<a href='/edit_post=<%=post.id %>' class = "link_button">Edit This Post</a>
+<%= erb :_pagination %>

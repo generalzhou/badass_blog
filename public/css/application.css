@@ -1,28 +1,114 @@
-.container {
-  /*
-    If you have a block-level element of a certain width, margin: 0 auto;
-    will how you center it inside its parent container.
 
-    See: http://bluerobot.com/web/css/center1.html
-    
-    Don't change the container width.
-  */
-  margin: 0 auto;  
-  width: 720px;
-}
 
 *{
   font-family: "BebasNeue", sans-serif;
+  font-color: #657B83;
+  border:1px red;
+}
+
+div {
+  margin: 0 auto;  
+  width: 720px;
+  background-color: white;
+  padding: 20px;
+}
+
+div.container{
+  border:1px solid #252525;
+}
+
+div.header, div.footer {
+  border-bottom: 3px solid #111727;
+  background-color:#252525;
+  color:white;
+  border:1px solid #252525;
+}
+
+div.post {
+  width:600px;
+  margin:0 auto;
+}
+
+div.user_widget{
+  width:100px;
+  float:right;
 }
 
 a {  
   text-decoration: none;
+  font-color: #111727;
 }
 
-small.page_no {
-  float: right;
-  color: #ddd;
+a.visited {font-color: #111727;}
+
+a.link_button {
+  padding: 5px;
+  border: 2px solid #ddd;
 }
+a:hover {
+  color:#F53E00
+}
+
+h2, h3, h4 {
+  margin-top: 40px;
+}
+
+h2 {
+  font-size:24px;
+}
+
+p.body, textarea {
+  font-family: Georgia;
+  font-size:16px;
+  line-height: 150%
+}
+
+ul.tags {
+  padding:0;
+}
+
+ul.tags > li {
+  font-size: 12px;
+  display:inline;
+}
+
+input.post_form, textarea.post_form{
+  margin: 15px 0px;
+  border: 0;
+  border-bottom: 3px solid #F53E00;
+}
+
+div.post_form {
+  width:600px;
+  margin: 0 auto;
+}
+
+textarea.post_form {
+  resize:vertical;
+  border-top: 3px solid #F53E00;
+}
+
+input.post_form{
+  width:300px;
+}
+
+input.post_form.title{
+  color:#111727;
+  font-size: 24px;
+}
+
+input.post_form.submit{
+  border: 3px solid #F53E00;
+  background-color:white;
+  font-size: 18px;
+  width:150px;
+}
+
+input.post_form.submit:hover{
+  background-color:#111727;
+  color:#F53E00;
+}
+
 
 .user_widget {
   float: right;
@@ -30,28 +116,18 @@ small.page_no {
 }
 
 
-header {
-  border-bottom: 2px solid #ddd;
-}
 
-p {
-  font-family: Georgia;
-  line-height: 150%
 
-}
+
+
 
 blockquote {
   font-style: italic;
 }
 
-h2, h3, h4 {
-  margin-top: 40px;
-}
-
-.footer {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 2px solid  #ddd;
+small.page_no {
+  float: right;
+  color: #ddd;
 }
 
 .pagination {
@@ -60,7 +136,6 @@ h2, h3, h4 {
 
 .pagination a {
   color: #222;
-  text-decoration: none;
 }
 
 .pagination a.disabled {
@@ -77,7 +152,7 @@ h2, h3, h4 {
   display:inline;
 }
 
-.pagination a {
+a.button {
   color: #222;
   border:1px solid black;
   padding:5px 10px;
@@ -88,15 +163,8 @@ h2, h3, h4 {
   color: #ccc;
 }
 
-.pagination a:hover {
-  background-color: gray;
-}
-
 .pagination a.active {
   background-color: #666666;
   font-color:white;
 }
-.pagination a:active {
-  background-color: black;
-  font-color:white;
-}
+
