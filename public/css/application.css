@@ -1,9 +1,102 @@
 .container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  /*
+    If you have a block-level element of a certain width, margin: 0 auto;
+    will how you center it inside its parent container.
+
+    See: http://bluerobot.com/web/css/center1.html
+    
+    Don't change the container width.
+  */
+  margin: 0 auto;  
+  width: 720px;
 }
-th {
-  text-align: left;
+
+*{
+  font-family: "BebasNeue", sans-serif;
+}
+
+a {  
+  text-decoration: none;
+}
+
+small.page_no {
+  float: right;
+  color: #ddd;
+}
+
+.user_widget {
+  float: right;
+  color: #ddd;
+}
+
+
+header {
+  border-bottom: 2px solid #ddd;
+}
+
+p {
+  font-family: Georgia;
+  line-height: 150%
+
+}
+
+blockquote {
+  font-style: italic;
+}
+
+h2, h3, h4 {
+  margin-top: 40px;
+}
+
+.footer {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 2px solid  #ddd;
+}
+
+.pagination {
+  margin: 30px 5px;
+}
+
+.pagination a {
+  color: #222;
+  text-decoration: none;
+}
+
+.pagination a.disabled {
+  color: #ccc;
+}
+
+
+.pagination ol {
+  display:inline;
+  padding:0;
+}
+
+.pagination li {
+  display:inline;
+}
+
+.pagination a {
+  color: #222;
+  border:1px solid black;
+  padding:5px 10px;
+  margin-left:-5px;
+}
+
+.pagination a.disabled {
+  color: #ccc;
+}
+
+.pagination a:hover {
+  background-color: gray;
+}
+
+.pagination a.active {
+  background-color: #666666;
+  font-color:white;
+}
+.pagination a:active {
+  background-color: black;
+  font-color:white;
 }

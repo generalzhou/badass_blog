@@ -15,9 +15,24 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+<title><%= @title || "Badass Blog"%></title>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <a href='/'><h1>My Sweet Blog</h1></a>
+    </header>
+
+    <div class="user_widget">
+      <%= erb :_user_widget, :locals => { :user => 'jack' }%>
+
+    </div>
+
   <%= yield %>
+
+</div>
+<div class="footer">
+      Copyright &copy; 2013 Jack is Awesome, inc.
+</div>
 </body>
 </html>
