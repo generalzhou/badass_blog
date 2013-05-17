@@ -1,13 +1,13 @@
 class Post < ActiveRecord::Base
   has_many :post_tags
   has_many :tags, :through => :post_tags
+  belongs_to :user
 
-  validates :title, :presence => true, :uniqueness => true
-  validates :text, :presence => true 
-  validates :tags, :presence => true 
-
+  validates :title, :text, :tags, :presence => true
+  validates_uniqueness_of :user_name, :scope => :user_id
+  
   def tag_names
-    tags.map(&:tag_name).join(",")
+    tags.map(&:title).join(",")
   end
 
   def posted_on

@@ -6,6 +6,14 @@
   border:1px red;
 }
 
+
+h1 {
+  margin:0px;
+  color: white;
+  float:left;
+   
+}
+
 body{
   background-image:url('foil.png');
 }
@@ -18,10 +26,13 @@ div.container {
 }
 
 div.header, div.footer {
+  margin:0 auto;
   border-bottom: 3px solid #111727;
   background-color:#252525;
   color:white;
-  border:1px solid #252525;
+  width:800px;
+  padding:20px;
+  height: 60px;
 }
 
 div.post {
@@ -31,7 +42,6 @@ div.post {
 
 div.user_widget{
   width:100px;
-  float:right;
 }
 
 a {  
@@ -49,10 +59,7 @@ a:hover {
   color:#F53E00
 }
 
-h1{
-  padding: 10px;
-  color:white;
-}
+
 
 h2, h3 {
   margin:0;
@@ -101,45 +108,51 @@ ul.tags > li {
   margin: 15px 0px;
   border: 0;
   border-bottom: 3px solid #F53E00;
-  border-top: 3px solid #F53E00;
   padding-top:30px;
   padding-bottom:30px;
 }
 
-.post.tags {
-  padding-bottom: 10px;
-  border-bottom: 3px solid #F53E00;
-}
-
-
 textarea.post {
   resize:vertical;
+}
+
+input{
+  background: rgba(0,0,0, 0);
+  border-bottom: 3px solid #F53E00;
 }
 
 input.post{
   width:300px;
 }
 
-
-input.post.submit{
-  width:149px;
+input.tags {
+  padding-bottom: 10px;
 }
-
 .title{
   color:#111727;
   font-size: 24px;
 }
 
-input.post.submit, a.button {
+input.submit, a.button {
   border: 3px solid #F53E00;
-  background-color:white;
+  background: rgba(0,0,0, 0);
   font-family: "BebasNeue", sans-serif;
   font-weight:bold;
   font-size: 14px;
   padding: 5px 10px;
 }
 
-input.post.submit:hover, a.button:hover{
+input.submit{
+  width:149px;
+}
+
+input.submit.login{
+  width:75px;
+}
+
+
+
+input.submit:hover, a.button:hover{
   background-color:#111727;
   color:#F53E00;
 }
@@ -147,13 +160,9 @@ input.post.submit:hover, a.button:hover{
 
 .user_widget {
   float: right;
+  margin-right:0 auto;
   color: #ddd;
 }
-
-
-
-
-
 
 
 blockquote {

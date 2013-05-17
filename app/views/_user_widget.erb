@@ -1,5 +1,5 @@
-<% if false && user %>
-   <%= erb :_user_widget_not_logged_in %>
+<% if true %>
+   <%= erb :_user_widget_logged_out %>
 <% else %>
    <%= erb :_user_widget_logged_in, :locals => {:username => 'Jack' }  %> 
 <% end %>
