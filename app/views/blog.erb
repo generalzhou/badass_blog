@@ -1,6 +1,6 @@
-
-
 <% Post.all.each do |post| %>
-  <%= render_post(post) %>
+  <div class="main_page post">
+    <%= erb :_post, :locals => {:post => post } %>
+  </div>
 <% end %>
 

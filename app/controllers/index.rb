@@ -14,12 +14,22 @@ get '/posts/new' do
   erb :new_post, :locals => { :post => Post.new }
 end
 
+put '/posts/validate' do
+  if string_to_tags_invalid?(params[:string_of_tags])
+    return "Please insert at least one valid tag" 
+  elsif Post.new(title: params[:title], text: params[:text], :tags => [Tag.new(tag_name: 'dummy')]).invalid?
+    return "Please make sure that you fill out the title and body fields and that your title is unique"
+  else
+    return "Successfully saved!"
+  end
+end
+
 # Create (handle the new form submission)
 put '/posts' do
-  tags = params[:tags].split(',').map do |tag|
-    Tag.find_or_create_by_tag_name(tag.chomp.downcase.strip)
-  end
-  Post.create(:title => params[:title], :text => params[:text], :tags => tags)
+
+  tags = string_to_tags(params[:string_of_tags])
+  new_post = Post.new(:title => params[:title], :text => params[:text], :tags => tags)
+  new_post.save if new_post.valid?
   redirect '/posts'
 end
 
@@ -31,11 +41,16 @@ end
 
 # Update (the submission of updates)
 post '/posts/:id' do
-  tags = params[:tags].split(',').map do |tag|
-    Tag.find_or_create_by_tag_name(tag.chomp.downcase)
-  end
+
+  tags = string_to_tags(params[:string_of_tags])
+
   post = Post.find(params[:id])
   post.update_attributes(:title => params[:title], :text => params[:text], :tags => tags)
+  redirect '/posts'
+end
+
+post '/posts/:id/remove' do
+  Post.find(params[:id]).remove
   redirect '/posts'
 end
 

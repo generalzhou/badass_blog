@@ -1,5 +1,5 @@
-<input class="title post_form" type='text'  name='Title' placeholder='Title' value="<%= post.title %>" />
+<input class="post title" type='text'  name='title' placeholder='Title' value="<%= post.title %>" />
 
-<textarea class="body post_form" name='text'rows="15" cols="65" ><%= post.text || 'Post your thoughts here...'%></textarea>
+<textarea class="post body" name='text'rows="15" cols="65" placeholder="Post your thoughts here..."><%= post.text%></textarea>
 
-<input class="tags post_form" type='text' placeholder='Tag this, separate by commas' value="<%= post.tag_names %>" name="tags" />
+<input class="post tags" type='text' placeholder='Tag this, separate by commas' value="<%= post.tag_names %>" name="string_of_tags" />

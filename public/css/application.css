@@ -6,15 +6,15 @@
   border:1px red;
 }
 
-div {
-  margin: 0 auto;  
-  width: 720px;
-  background-color: white;
-  padding: 20px;
+body{
+  background-image:url('foil.png');
 }
 
-div.container{
-  border:1px solid #252525;
+div.container {
+  margin: 0 auto;  
+  width: 800px;
+  background-color: white;
+  padding: 20px;
 }
 
 div.header, div.footer {
@@ -39,7 +39,7 @@ a {
   font-color: #111727;
 }
 
-a.visited {font-color: #111727;}
+a:visited {color: #111727;}
 
 a.link_button {
   padding: 5px;
@@ -49,8 +49,22 @@ a:hover {
   color:#F53E00
 }
 
-h2, h3, h4 {
-  margin-top: 40px;
+h1{
+  padding: 10px;
+  color:white;
+}
+
+h2, h3 {
+  margin:0;
+  margin-top: 20px;
+}
+
+h4.posted_on{
+  margin-top:10px;
+}
+
+h4.return_message{
+  color: #F53E00;
 }
 
 h2 {
@@ -72,39 +86,60 @@ ul.tags > li {
   display:inline;
 }
 
-input.post_form, textarea.post_form{
-  margin: 15px 0px;
-  border: 0;
-  border-bottom: 3px solid #F53E00;
-}
-
-div.post_form {
+.post {
   width:600px;
   margin: 0 auto;
 }
 
-textarea.post_form {
-  resize:vertical;
+.post.main_page{
+  padding-top:10px;
   border-top: 3px solid #F53E00;
+
 }
 
-input.post_form{
+.post.body{
+  margin: 15px 0px;
+  border: 0;
+  border-bottom: 3px solid #F53E00;
+  border-top: 3px solid #F53E00;
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+.post.tags {
+  padding-bottom: 10px;
+  border-bottom: 3px solid #F53E00;
+}
+
+
+textarea.post {
+  resize:vertical;
+}
+
+input.post{
   width:300px;
 }
 
-input.post_form.title{
+
+input.post.submit{
+  width:149px;
+}
+
+.title{
   color:#111727;
   font-size: 24px;
 }
 
-input.post_form.submit{
+input.post.submit, a.button {
   border: 3px solid #F53E00;
   background-color:white;
-  font-size: 18px;
-  width:150px;
+  font-family: "BebasNeue", sans-serif;
+  font-weight:bold;
+  font-size: 14px;
+  padding: 5px 10px;
 }
 
-input.post_form.submit:hover{
+input.post.submit:hover, a.button:hover{
   background-color:#111727;
   color:#F53E00;
 }
@@ -152,19 +187,8 @@ small.page_no {
   display:inline;
 }
 
-a.button {
-  color: #222;
-  border:1px solid black;
-  padding:5px 10px;
-  margin-left:-5px;
-}
 
 .pagination a.disabled {
   color: #ccc;
-}
-
-.pagination a.active {
-  background-color: #666666;
-  font-color:white;
 }
 

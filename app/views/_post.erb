@@ -1,11 +1,9 @@
-<div class="post">
-  <h2 class="post_title"><a href='/post=<%= post_id %>'><%= title %></a>
-  
-  <p class="body"><%= text %></p>
-  <ul class="tags">
-    <% tags.each do |tag| %>
-      <li><%= tag.tag_name %></li>
-    <% end %>
-  </ul>
+<h2 class="title"><a href='/posts/<%= post.id %>'><%= post.title %></a></h2>
+<h4 class="posted_on">Posted on: <%=post.posted_on %></h4>
 
-</div>
+<p class="body"><%= post.text %></p>
+<ul class="tags">
+  <% post.tags.each do |tag| %>
+    <li><%= tag.tag_name %></li>
+  <% end %>
+</ul>

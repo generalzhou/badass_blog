@@ -1,7 +1,14 @@
-<div class="post_form">
+<div class="post">
+  <h2>Edit Post:</h2>
+  <br>
   <form action='/posts/<%= post.id %>' method='post'>
     <%= erb :_post_form, :locals => {:post => post} %>
     <br>
-    <input class="post_form submit" type='submit' value='Edit'>
+    <br>
+    <input class="post submit" type='submit' value='Save'>
+    <form action="/posts/<%=post.id%>/remove" method="post">
+      <input class="post submit" type='submit' value='Remove'>
+    </form>
   </form>
+  <div class="return_message"></div>
 </div>
