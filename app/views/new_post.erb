@@ -1,7 +1,7 @@
 <div class="post">
   <h2>New Post:</h2>
   <br>
-  <form action='/posts' method='post'>
+  <form class="post_form" action='/posts' method='post'>
 
     <input type="hidden" name="_method" value="put" />
     <%= erb :_post_form, :locals => {:post => post} %>

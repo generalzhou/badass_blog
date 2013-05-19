@@ -1,7 +1,7 @@
 <div class="post">
   <h2>Edit Post:</h2>
   <br>
-  <form action='/posts/<%= post.id %>' method='post'>
+  <form action='/posts/<%= post.id %>' class="post_form" method='post'>
     <%= erb :_post_form, :locals => {:post => post} %>
     <br>
     <br>

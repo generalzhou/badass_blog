@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
       # t.timestamps
   has_many :posts
 
-  validates :username, :presence => true, :uniqueness
+  validates :user_name, :presence => true, :uniqueness => true
 
-  , :login, :email, :presence => true
+  validates :email, :presence => true
 
 
 

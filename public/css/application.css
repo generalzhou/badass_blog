@@ -20,18 +20,17 @@ body{
 
 div.container {
   margin: 0 auto;  
-  width: 800px;
+  width: 760px;
   background-color: white;
   padding: 20px;
 }
 
-div.header, div.footer {
+table.header, table.footer {
   margin:0 auto;
   border-bottom: 3px solid #111727;
   background-color:#252525;
   color:white;
   width:800px;
-  padding:20px;
   height: 60px;
 }
 

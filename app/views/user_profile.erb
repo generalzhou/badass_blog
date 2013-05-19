@@ -1,0 +1,12 @@
+<% user = User.find(user_id) %>
+
+<h3 style='color:#F53E00'><%= user.user_name %></h3>
+
+<br>
+<%=user.first_name + " " + user.last_name %>
+<br>
+<br>
+email: <%= user.email %>
+<br>
+<br>
+<%= user.posts.inspect %>

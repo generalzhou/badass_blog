@@ -18,32 +18,27 @@
 <title><%= @title || "Badass Blog"%></title>
 </head>
 <body>
+  <table width="800" class='header'>
+    <tr>
+      <td width = '550px'><a href='/'><h1>My Sweet Blog</h1></a></td>
+      <td width = '250px'>
+        <%= erb :_user_widget, :locals => { :user => 'jack' }%>
 
-  <div class="header">
-    <table width="600">
-      <tr>
-        <td><a href='/'><h1>My Sweet Blog</h1></a></td>
-        <td>
-          <div class="user_widget">
-            <%= erb :_user_widget, :locals => { :user => 'jack' }%>
-          </div>
-        </td>
-      </tr>
-    </table>
-
-  </div>
+      </td>
+    </tr>
+  </table>
 
   <div class="container">
 
 
-  <a class="post button"href='/posts/new'>New Post</a>
+  <%= "<a class='post button' href='/posts/new'>New Post</a>" if session[:user_id] %>
 
 
- <%= yield %>
+  <%= yield %>
 
-</div>
-<div class="footer">
-      Copyright &copy; 2013 Jack is Awesome, inc.
-</div>
+  </div>
+<table class="footer">
+      <tr><td>Copyright &copy; 2013 Jack is Awesome, inc.</tr></td>
+</table>
 </body>
 </html>
