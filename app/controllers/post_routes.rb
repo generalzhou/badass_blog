@@ -4,53 +4,62 @@ get '/posts' do
 end
 
 # New (the get action for the new post form)
-get '/posts/new' do
+get '/user/:user_name/posts/new' do
   erb :new_post, :locals => { :post => Post.new }
 end
 
-put '/posts/validate' do
-  if string_to_tags_invalid?(params[:string_of_tags])
-    return "Please insert at least one valid tag" 
-  elsif Post.new(title: params[:title], text: params[:text], :tags => [Tag.new(title: 'dummy')]).invalid?
-    return "Please make sure that you fill out the title and body fields and that your title is unique"
+# Create (handle the new form submission)
+put '/user/:user_name/posts' do
+  new_post = Post.new(:title => params[:title], 
+                      :text => params[:text], 
+                      :tags => Tag.string_to_tags(params[:string_of_tags]), 
+                      :user => User.find(session[:user_id]))
+  if new_post.valid?
+    new_post.save
+    redirect '/posts'
   else
-    return "Successfully saved!"
+    erb :new_post, :locals => { :post => new_post }
   end
 end
 
-# Create (handle the new form submission)
-put '/posts' do
-
-  tags = string_to_tags(params[:string_of_tags])
-  new_post = Post.new(:title => params[:title], :text => params[:text], :tags => tags)
-  new_post.save if new_post.valid?
-  redirect '/posts'
-end
-
 # Edit (the get action for update post form)
-get '/posts/:id/edit' do
-  post = Post.find(params[:id])
-  erb :edit_post, :locals => { :post => post }
+get '/user/:user_name/posts/:title/edit' do
+  
+  user = find_user
+
+  post = user.posts.where(title: params[:title]).first if user
+  if post
+    erb :edit_post, :locals => { :post => post }
+  elsif post
+    redirect "/posts/#{post.title}"
+  else
+
+  end
 end
 
 # Update (the submission of updates)
-post '/posts/:id' do
+post '/user/:user_name/posts/:title' do
 
-  tags = string_to_tags(params[:string_of_tags])
+  tags = Tag.string_to_tags(params[:string_of_tags])
 
-  post = Post.find(params[:id])
+  user = find_user
+  post = user.posts.where(title: params[:title]).first if user
+
   post.update_attributes(:title => params[:title], :text => params[:text], :tags => tags)
   redirect '/posts'
 end
 
-post '/posts/:id/remove' do
-  Post.find(params[:id]).remove
+post '/user/:user_name/posts/:title/remove' do
+  user = find_user
+  post = user.posts.where(title: params[:title]).first if user
+
+  post.remove
   redirect '/posts'
 end
 
 # Read (display a single post)
-get '/posts/:id' do
-  post = Post.find(params[:id])
+get '/user/:user_name/posts/:post_title' do
+  post = Post.find_by_title(params[:post_title])
   erb :post, :locals => { :post => post }
 end
 

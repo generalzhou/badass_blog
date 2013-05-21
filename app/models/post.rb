@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
 
   validates :title, :text, :tags, :presence => true
-  validates_uniqueness_of :user_name, :scope => :user_id
+  validates_uniqueness_of :title, :scope => :user_id
   
   def tag_names
     tags.map(&:title).join(",")

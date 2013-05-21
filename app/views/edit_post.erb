@@ -1,12 +1,12 @@
 <div class="post">
   <h2>Edit Post:</h2>
   <br>
-  <form action='/posts/<%= post.id %>' class="post_form" method='post'>
+  <form action='/user/<%=find_user.user_name%>/posts/<%= post.title %>' class="post_form" method='post'>
     <%= erb :_post_form, :locals => {:post => post} %>
     <br>
     <br>
     <input class="post submit" type='submit' value='Save'>
-    <form action="/posts/<%=post.id%>/remove" method="post">
+    <form action="/user/<%=post.user.user_name%>/posts/<%= post.title %>/remove" method="post">
       <input class="post submit" type='submit' value='Remove'>
     </form>
   </form>

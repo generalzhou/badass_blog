@@ -1,7 +1,7 @@
-<h2 class="title"><a href='/posts/<%= post.id %>'><%= post.title %></a></h2>
+<h2 class="title"><a href='/user/<%= post.user.user_name %>/posts/<%= post.title %>'><%= post.title %></a></h2>
 <h4 class="posted_on">Posted on: <%=post.posted_on %></h4>
 
-<p class="body"><%= post.text %></p>
+<p class="body"><%= post.text.gsub(/\n/, '<br>') %></p>
 <ul class="tags">
   <% post.tags.each do |tag| %>
     <li><%= tag.title %></li>

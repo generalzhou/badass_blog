@@ -1,3 +1,4 @@
-Welcome <%= User.find(session[:user_id]) %>
+Welcome <%= User.find(session[:user_id]).user_name %>
+&nbsp;&nbsp;
 
-<a class = "button" href='/user/logout'>Log Out</a>
+<a class = "button" href='/user/logout' style='color:white'>Log Out</a>

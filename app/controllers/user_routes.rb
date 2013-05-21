@@ -4,8 +4,8 @@ end
 
 post '/user/create' do
   new_user = User.create!(params)
-  session[:uder_id] = new_user.id
-  redirect '/user/profile'
+  session[:user_id] = new_user.id
+  redirect "/user/#{user.user_name}"
 end
 
 put '/user/validate' do

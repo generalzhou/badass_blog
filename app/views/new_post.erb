@@ -1,7 +1,8 @@
+
 <div class="post">
   <h2>New Post:</h2>
   <br>
-  <form class="post_form" action='/posts' method='post'>
+  <form class="post_form" action='/user/<%=find_user.user_name %>/posts' method='post'>
 
     <input type="hidden" name="_method" value="put" />
     <%= erb :_post_form, :locals => {:post => post} %>
@@ -9,5 +10,5 @@
     <br>
     <input class="submit post" type='submit' value='Post!'>
   </form>
-  <h4 class="return_message"></h4>
+  <h4 class="return_message"><%= post.errors.full_messages %></h4>
 </div>

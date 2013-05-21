@@ -18,27 +18,36 @@
 <title><%= @title || "Badass Blog"%></title>
 </head>
 <body>
-  <table width="800" class='header'>
-    <tr>
-      <td width = '550px'><a href='/'><h1>My Sweet Blog</h1></a></td>
-      <td width = '250px'>
-        <%= erb :_user_widget, :locals => { :user => 'jack' }%>
-
-      </td>
-    </tr>
-  </table>
-
-  <div class="container">
 
 
-  <%= "<a class='post button' href='/posts/new'>New Post</a>" if session[:user_id] %>
+  <table class='header'>
+  <tr>
+    <td>
+      <a href='/'><h1><%= find_user ?  "#{find_user.first_name} #{find_user.last_name}" : "My Sweet Blog"%></h1></a>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <%="<a class='post button' href='/user/#{find_user.user_name}/posts/new' style='color:white'>New Post</a>" if find_user %>
+    </td>
+  </tr>
+  <tr class="user_widget">
+    <td> 
+      <%= erb find_user ? :_user_widget_logged_in : :_user_widget_logged_out %>
+    </td>
+  </tr>
 
-
-  <%= yield %>
-
-  </div>
-<table class="footer">
-      <tr><td>Copyright &copy; 2013 Jack is Awesome, inc.</tr></td>
 </table>
+
+
+<div class="container">
+  <%= yield %>
+</div>
+
+
+
+
+  
+
 </body>
 </html>

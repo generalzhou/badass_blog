@@ -19,19 +19,41 @@ body{
 }
 
 div.container {
-  margin: 0 auto;  
-  width: 760px;
+  margin-top: -4px;
+  position:absolute;
+  right:400px;
+  width: 800px;
   background-color: white;
-  padding: 20px;
 }
 
-table.header, table.footer {
+table.footer, table.header {
   margin:0 auto;
   border-bottom: 3px solid #111727;
   background-color:#252525;
   color:white;
-  width:800px;
-  height: 60px;
+
+}
+
+
+
+table.header{
+  width:400px;
+  height: 100%;
+  position:fixed;
+  top:0;
+  right:0;
+}
+
+table.footer{
+  bottom:0;
+}
+
+table.footer {
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:1200px;
+  height: 200px;
 }
 
 div.post {
@@ -92,9 +114,7 @@ ul.tags > li {
   display:inline;
 }
 
-.post {
-  width:600px;
-  margin: 0 auto;
+
 }
 
 .post.main_page{
@@ -118,6 +138,10 @@ textarea.post {
 input{
   background: rgba(0,0,0, 0);
   border-bottom: 3px solid #F53E00;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
 }
 
 input.post{
@@ -167,36 +191,3 @@ input.submit:hover, a.button:hover{
 blockquote {
   font-style: italic;
 }
-
-small.page_no {
-  float: right;
-  color: #ddd;
-}
-
-.pagination {
-  margin: 30px 5px;
-}
-
-.pagination a {
-  color: #222;
-}
-
-.pagination a.disabled {
-  color: #ccc;
-}
-
-
-.pagination ol {
-  display:inline;
-  padding:0;
-}
-
-.pagination li {
-  display:inline;
-}
-
-
-.pagination a.disabled {
-  color: #ccc;
-}
-
