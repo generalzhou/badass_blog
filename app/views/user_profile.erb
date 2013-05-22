@@ -1,12 +1,18 @@
 <% user = User.find(user_id) %>
+<div class='post' style='margin-top:20px'>
+<h2 class="title"><%=user.full_name%><h4 class='title' style="font-style:italic; font-weight:normal">  AKA  <h2 class='title'> <%=user.user_name %></h2>
 
-<h3 style='color:#F53E00'><%= user.user_name %></h3>
+<br>
+<br>
+<br>
+<h4>email: <%= user.email %><h4>
+<br>
+<br>
 
-<br>
-<%=user.first_name + " " + user.last_name %>
-<br>
-<br>
-email: <%= user.email %>
-<br>
-<br>
-<%= user.posts.inspect %>
+</div>
+<% user.posts.each do |post| %>
+  <div class="main_page post">
+    <%= erb :_post, :locals => {:post => post } %>
+  </div>
+<% end %>
+

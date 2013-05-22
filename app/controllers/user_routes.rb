@@ -1,22 +1,17 @@
 get '/user/create' do
-  erb :create_account
+  erb :create_account, :locals => {:user => nil }
 end
 
 post '/user/create' do
-  new_user = User.create!(params)
-  session[:user_id] = new_user.id
-  redirect "/user/#{user.user_name}"
-end
-
-put '/user/validate' do
-  if User.new(params).invalid?
-    return "Please fill out all the required fields!"
+  new_user = User.new(params)
+  if new_user.valid?
+    new_user.save
+    session[:user_id] = new_user.id
+    redirect "/user/#{new_user.user_name}"
   else
-    User.create!(params)
-    return "Successfully created!"
+    erb :create_account, :locals => { :user => new_user }
   end
 end
-
 
 post '/user/login' do 
   if user = User.authenticate(params)

@@ -7,9 +7,7 @@ class User < ActiveRecord::Base
       # t.string :password_hash
       # t.timestamps
   has_many :posts
-
   validates :user_name, :presence => true, :uniqueness => true
-
   validates :email, :presence => true
 
 
@@ -35,5 +33,9 @@ class User < ActiveRecord::Base
   def self.authenticate(params)
     @user = User.find_by_email(params[:email])
     (@user && @user.password == params[:password]) ? @user : false
+  end
+
+  def full_name
+    first_name + ' ' + last_name
   end
 end

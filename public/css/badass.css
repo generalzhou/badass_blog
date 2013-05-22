@@ -1,0 +1,205 @@
+
+
+*{
+  font-family: "BebasNeue", sans-serif;
+  color: #252525;
+  border:1px red;
+}
+
+body{
+  background-image:url('foil.png');
+}
+
+div.container {
+  padding-top: 10px;
+  margin-top: 0;
+  position:absolute;
+  right:400px;
+  width: 800px;
+  background-color: white;
+}
+
+div.right_bar{
+  background-color:#252525;
+  color:white;
+  width:400px;
+  height: 100%;
+  position:fixed;
+  top:0;
+  right:0;
+}
+
+h1 {
+  font-size: 48px;
+  color:white;
+  margin: 0;
+}
+
+div.header{
+  margin-top: 20px;
+}
+
+table.footer{
+  bottom:0;
+}
+
+table.footer {
+  position:absolute;
+  right:0;
+  bottom:0;
+  width:1200px;
+  height: 200px;
+}
+
+
+
+div.user_widget{
+  width:100px;
+}
+
+a {  
+  text-decoration: none;
+  color: #111727;
+}
+
+a:visited {color: #111727;}
+
+a.link_button {
+  padding: 5px;
+  border: 2px solid #ddd;
+}
+a:hover {
+  color:#F53E00
+}
+
+
+
+h2, h3 {
+  margin:0;
+  margin-top: 20px;
+}
+
+h4.posted_on{
+  margin:0;
+  size:14px;
+  /*font-weight:normal;*/
+}
+
+h4.post_author {
+  margin:0;
+  size:16px;
+  font-style: italic;
+  font-family: Georgia;
+  font-weight:normal;
+}
+
+h4.return_message{
+  color: #F53E00;
+}
+
+h2 {
+  font-size:24px;
+}
+
+div.post {
+  width:600px;
+  margin:0 auto;
+}
+
+p.body, textarea {
+  font-family: Georgia;
+  font-size:16px;
+  line-height: 140%
+}
+
+p.body {
+  margin: 20px, 0;
+}
+
+ul.tags {
+  padding:0;
+}
+
+ul.tags > li {
+  font-size: 12px;
+  display:inline;
+}
+
+
+.main_page.post{
+  margin-top: -16px;
+  border-top: 3px solid #F53E00;
+  padding-bottom: 60px;
+  padding-top: 20px;
+}
+
+.post.body{
+  margin: 15px 0px;
+  border: 0;
+  border-bottom: 3px solid #F53E00;
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+textarea.post {
+  resize:vertical;
+}
+
+input{
+  background: rgba(0,0,0, 0);
+  border-bottom: 3px solid #F53E00;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+input.post{
+  width:300px;
+}
+
+input.tags {
+  padding-bottom: 10px;
+}
+
+.title{
+  color:#F53E00;
+  font-size: 40px;
+  display:inline;
+}
+
+input.submit, a.button {
+  border: 3px solid #F53E00;
+  background: rgba(0,0,0, 0);
+  font-family: "BebasNeue", sans-serif;
+  font-weight:bold;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+
+input.submit{
+  width:149px;
+}
+
+input.submit.login{
+  width:75px;
+}
+
+
+
+input.submit:hover, a.button:hover{
+  background-color:#111727;
+  color:#F53E00;
+}
+
+
+.user_widget {
+  float: right;
+  margin-right:0 auto;
+  color: #ddd;
+}
+
+
+blockquote {
+  font-style: italic;
+}

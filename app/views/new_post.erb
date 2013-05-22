@@ -10,5 +10,5 @@
     <br>
     <input class="submit post" type='submit' value='Post!'>
   </form>
-  <h4 class="return_message"><%= post.errors.full_messages %></h4>
-</div>
+  <%= print_errors(post) %>
+  </div>

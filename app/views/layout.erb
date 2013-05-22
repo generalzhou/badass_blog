@@ -10,7 +10,7 @@
   <!--
     application.css is where you put your styles
   -->
-  <link rel="stylesheet" href="/css/application.css">
+  <link rel="stylesheet" href="/css/badass.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
@@ -19,26 +19,17 @@
 </head>
 <body>
 
-
-  <table class='header'>
-  <tr>
-    <td>
-      <a href='/'><h1><%= find_user ?  "#{find_user.first_name} #{find_user.last_name}" : "My Sweet Blog"%></h1></a>
-    </td>
-  </tr>
-  <tr>
-    <td>
+<div class='right_bar'>
+  <div class='header'>
+    <a href='/'><h1><%= find_user ?  "#{find_user.first_name} #{find_user.last_name}" : "Stream of Consciousness"%></h1></a>
+  </div>
+  
       <%="<a class='post button' href='/user/#{find_user.user_name}/posts/new' style='color:white'>New Post</a>" if find_user %>
-    </td>
-  </tr>
-  <tr class="user_widget">
-    <td> 
+  
+  <div class="user_widget">
       <%= erb find_user ? :_user_widget_logged_in : :_user_widget_logged_out %>
-    </td>
-  </tr>
-
-</table>
-
+  </div>
+</div>
 
 <div class="container">
   <%= yield %>
